@@ -31,9 +31,13 @@ namespace LineCounter
                     lines += CountLines(entry);
                 }
             }
-            if (!location.EndsWith(".cs") || !location.EndsWith(".java") || !location.EndsWith(".txt") || !location.EndsWith(".json") || !location.EndsWith(".c") || !location.EndsWith(".cpp")) 
+            if (!location.EndsWith(".cs") && !location.EndsWith(".java") && !location.EndsWith(".c") && !location.EndsWith(".cpp")) 
+            {
                 return lines;
-            return lines + File.ReadAllLines(location).Count();
+            }
+            var read = File.ReadAllLines(location).Count();
+            Console.WriteLine($"Lines: {read} - \"{location}\"");
+            return lines + read;
         }
     }
 }
