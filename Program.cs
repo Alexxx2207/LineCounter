@@ -4,15 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            string loc = "";
-            if (args.Length < 1)
-            {
-                Console.WriteLine("No arguments. Scanning current folder.");
-                loc = ".";
-            }
-            else loc = args[0];
-
-            var files = Directory.GetFileSystemEntries(loc);
+            var files = Directory.GetFileSystemEntries("E:\\Programming\\GitHub\\Profitable-main\\Profitable");
             int lines = 0;
 
             for (int i = 0; i < files.Length; i++)

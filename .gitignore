@@ -1,3 +1,6 @@
 .vscode
 bin
 obj
+.vs
+*.vsidx
+*.suo
